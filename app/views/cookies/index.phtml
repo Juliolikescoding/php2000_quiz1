@@ -1,0 +1,9 @@
+<h1>Cookies</h1>
+
+<?php foreach($cookies as $cookie) { ?>
+	<div class="place">
+		<img src="/pictures/<?= $cookie->picture ?>" alt="">
+		<p><?= $cookie->cookie ?> (<?= $cookie->quantity ?>)</p>
+		<a href="/cookies/delete?id=<?= $cookie->id ?>">delete</a>
+	</div>
+<?php } ?>

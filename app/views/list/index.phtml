@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List</title>
+	<style type="text/css">
+		.checked {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<h1>List</h1>
+
+	<form action="/list/submit" method="post">
+		<label for="item">New item</label>
+		<input id="item" type="input" name="item" required>
+		<button type="submit">Submit</button>
+	</form>
+
+	<p>My shopping list</p>
+
+	<ul>
+		<?php foreach($items as $i) { ?>
+			<li <?php if($i->checked) echo 'class="checked"'; ?>>
+				<?= $i->item ?>
+
+				<?php if( ! $i->checked) { ?>
+					<a href="/list/check?id=<?= $i->id ?>">[check]</a>
+				<?php } ?>
+			</li>
+		<?php } ?>
+	</ul>
+
+	<p><a href="/home">Home</a></p>
+</body>
+</html>

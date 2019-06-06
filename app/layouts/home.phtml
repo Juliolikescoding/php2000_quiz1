@@ -1,0 +1,21 @@
+<?php
+	$configs = $this->di->get('config');
+	$fcolor = $configs->interface->fcolor;
+	$bcolor = $configs->interface->bcolor;
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<style type="text/css">
+		body {
+			color: <?= $fcolor ?>;
+			background-color: <?= $bcolor ?>;
+		}
+	</style>
+</head>
+<body>
+	<?php echo $this->getContent(); ?>
+</body>
+</html>
